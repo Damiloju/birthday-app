@@ -11,10 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@home')->name('home');
+Route::get('view', 'PagesController@view')->name('view');
+Route::get('add', 'PagesController@add')->name('add');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index');
+Route::post('add/new', 'RecordsController@store')->name('store');
