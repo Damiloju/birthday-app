@@ -44,7 +44,7 @@
         <div class="container" style="margin-top:70px;margin-bottom:50px;">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2016 <a target="_blank" href="http://twitter.com/thatdamiguy/" title="@thatdamiguy">thatdamiguy</a>. All Rights Reserved.
+                    &copy; 2016 <a target="_blank"  style="color: #ff22c5;" href="http://twitter.com/thatdamiguy/" title="@thatdamiguy">thatdamiguy</a>. All Rights Reserved.
                 </div>
             </div>
         </div>

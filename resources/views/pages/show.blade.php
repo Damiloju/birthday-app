@@ -13,7 +13,7 @@
     <div class="container">
         <div class="table-responsive">
             <table class="table table-bordered table-hover">
-                <a href="{{route('view')}}"><h1>Results</h1></a>
+                <a href="{{route('view')}}"><h1 style="margin-top: 0px;">Results</h1></a>
                 <thead>
                 <tr>
                     <th>S/N</th>
@@ -35,9 +35,8 @@
                     </tr>
                     </tbody>
                 @endforeach
-
-                {{ $records->appends(['month'=>request('month')])->links() }}
             </table>
+            {{ $records->appends(['month'=>request('month')])->links() }}
         </div>
     </div>
 @stop

@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class RecordsController extends Controller
 {
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(){
 
         $this->validate(request(),[
@@ -25,12 +28,15 @@ class RecordsController extends Controller
         return back();
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
     public function show() {
         $this->validate(request(),[
             'month' => 'required|in:January,February,March,April,May,June,July,August,September,October,November,December',
         ]);
 
-        $records = Records::where('month', request()->month)->paginate(15);
+        $records = Records::where('month', request()->month)->paginate(10);
 
         if($records->isEmpty()){
             \Session::flash('empty', 'You Search returned an empty result. Please try again');
