@@ -9,8 +9,15 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
+    <style type="text/css">
+        body {
+            font-family: Fira Code;
+            background-color: cornflowerblue;
+        }
+    </style>
+    @yield('header')
 </head>
-<body style="font-family: Fira Code;background-color: cornflowerblue">
+<body>
 
     <nav class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="navbar-header">
@@ -21,17 +28,27 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="\" style="font-weight: 500;">LucidMedia</a>
+            <a class="navbar-brand" href="{{route('home')}}" style="font-weight: 500;">LucidMedia</a>
         </div>
         <div class="collapse navbar-collapse" id="elements">
             <ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
-                <a href="\add" class="btn btn-warning navbar-btn">Add Data</a>
-                <a href="\view" class="btn btn-warning navbar-btn">See Birthdays</a>
+                <a href="{{route('add')}}" class="btn btn-warning navbar-btn">Add Data</a>
+                <a href="{{route('view')}}" class="btn btn-warning navbar-btn">See Birthdays</a>
             </ul>
         </div>
     </nav>
 
     @yield('content')
+
+    <footer id="footer">
+        <div class="container" style="margin-top:70px;margin-bottom:50px;">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2016 <a target="_blank" href="http://twitter.com/thatdamiguy/" title="@thatdamiguy">thatdamiguy</a>. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
 
     <!-- JavaScripts -->
     <script src="/js/jquery.min.js"></script>

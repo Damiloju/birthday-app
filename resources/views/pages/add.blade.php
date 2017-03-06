@@ -2,8 +2,16 @@
 
 @section('content')
     <div class="container">
+        @if(Session::has('added'))
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <strong>Success!</strong>{{ Session::get('added')}}.
+            </div>
+        @endif
+
         <div class="jumbotron">
-            <form class="form-horizontal" role="form" action="add/new" method="POST">
+            <form class="form-horizontal" role="form" action="{{route('store')}}" method="POST">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="name">Name</label>

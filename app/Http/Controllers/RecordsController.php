@@ -20,6 +20,23 @@ class RecordsController extends Controller
 
         $records->create(request()->all());
 
-        return request()->all();
+        \Session::flash('added', 'Your Operation was Successfull');
+
+        return back();
+    }
+
+    public function show() {
+        $this->validate(request(),[
+            'month' => 'required|in:January,February,March,April,May,June,July,August,September,October,November,December',
+        ]);
+
+        $records = Records::where('month', request()->month)->paginate(15);
+
+        if($records->isEmpty()){
+            \Session::flash('empty', 'You Search returned an empty result. Please try again');
+            return back();
+        }
+
+        return view('pages.show', compact('records'));
     }
 }

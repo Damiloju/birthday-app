@@ -2,9 +2,16 @@
 
 @section('content')
     <div class="container">
+        @if(Session::has('empty'))
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <strong>Success!</strong>{{ Session::get('empty')}}.
+            </div>
+        @endif
         <div class="jumbotron">
-            <form class="form-inline" action="search" method="POST">
-                {{csrf_field()}}
+            <form class="form-inline" action="{{route('search')}}" method="GET">
+                {{--{{csrf_field()}}--}}
                 {{--<div class="form-group">
                     <label for="name">Name</label>
                     <input name="name" type="text" id="name" class="form-control" placeholder="Enter student's name">

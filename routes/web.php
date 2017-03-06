@@ -16,3 +16,4 @@ Route::get('view', 'PagesController@view')->name('view');
 Route::get('add', 'PagesController@add')->name('add');
 
 Route::post('add/new', 'RecordsController@store')->name('store');
+Route::get('search', 'RecordsController@show')->name('search');
