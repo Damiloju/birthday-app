@@ -36,7 +36,7 @@ class RecordsController extends Controller
             'month' => 'required|in:January,February,March,April,May,June,July,August,September,October,November,December',
         ]);
 
-        $records = Records::where('month', request()->month)->paginate(10);
+        $records = Records::where('month', request()->month)->orderBy('day','ASC')->paginate(10);
 
         if($records->isEmpty()){
             \Session::flash('empty', 'You Search returned an empty result. Please try again');
