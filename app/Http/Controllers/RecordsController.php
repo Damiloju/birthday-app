@@ -45,4 +45,14 @@ class RecordsController extends Controller
 
         return view('pages.show', compact('records'));
     }
+
+    /**
+     *
+     */
+    public function week() {
+        $month =  date('F');
+        $day = date('j');
+
+        return view('pages.week');
+    }
 }

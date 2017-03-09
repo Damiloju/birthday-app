@@ -13,7 +13,7 @@
     <div class="container">
         <div class="table-responsive">
             <table class="table table-bordered table-hover">
-                <a href="{{route('view')}}"><h1 style="margin-top: 0px;">Results</h1></a>
+                <a href="{{route('view')}}"><h1 style="margin-top: 0px;">Birthdays For This Week</h1></a>
                 <thead>
                 <tr>
                     <th>S/N</th>
@@ -24,20 +24,9 @@
                 </tr>
                 </thead>
                 <?php $sn = 0; ?>
-                @foreach($records as $record)
-                    <tbody>
-                    <tr>
-                        <th>{{++$sn}}</th>
-                        <th>{{$record->name}}</th>
-                        <th>{{$record->month}}</th>
-                        <th>{{$record->day}}</th>
-                        <th>{{$record->level}}</th>
-                    </tr>
-                    </tbody>
-                @endforeach
+
             </table>
-            {{ $records->appends(['month'=>request('month')])->links() }}
+            {{--{{ ->appends(['month'=>request('month')])->links() }}--}}
         </div>
-        <a href="{{route('week')}}" class="btn btn-primary">Birthdays Of the Week</a>
     </div>
 @stop

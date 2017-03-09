@@ -40,5 +40,6 @@
                 <button type="submit" class="btn btn-primary">View</button>
             </form>
         </div>
+            <a href="{{route('week')}}" class="btn btn-warning">Birthdays Of the Week</a>
     </div>
 @stop
