@@ -7,7 +7,7 @@
     <!-- Styles -->
     <!-- Bootstrap stylesheet link -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <!-- Optional theme -->
+    <!-- Optional th/home/yusuf/Pictures/mylife.pngeme -->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
     <style type="text/css">
         body {
@@ -44,7 +44,7 @@
         <div class="container" style="margin-top:70px;margin-bottom:50px;">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2016 <a target="_blank"  style="color: #ff22c5;" href="http://twitter.com/thatdamiguy/" title="@thatdamiguy">thatdamiguy</a>. All Rights Reserved.
+                    &copy; 2017 <a target="_blank"  style="color: #ff22c5;" href="http://twitter.com/thatdamiguy/" title="@thatdamiguy">thatdamiguy</a>. All Rights Reserved.
                 </div>
             </div>
         </div>

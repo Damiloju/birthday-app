@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Records;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class RecordsController extends Controller
@@ -46,13 +47,22 @@ class RecordsController extends Controller
         return view('pages.show', compact('records'));
     }
 
-    /**
-     *
-     */
     public function week() {
         $month =  date('F');
-        $day = date('j');
 
-        return view('pages.week');
+        Carbon::setWeekStartsAt(Carbon::SUNDAY);
+        Carbon::setWeekEndsAt(Carbon::SATURDAY);
+
+        $sunday = Carbon::now()->startOfWeek()->format('j');
+        $saturday = Carbon::now()->endOfWeek()->format('j');
+
+        $birthdays = Records::where('month',$month)->whereBetween('day',[$sunday,$saturday])->paginate(10);
+
+        if($birthdays->isEmpty()){
+            \Session::flash('empty', 'No Birthdays This Week Sadly!');
+            return back();
+        }
+
+        return view('pages.week', compact('birthdays'));
     }
 }
